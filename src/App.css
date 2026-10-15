@@ -1,0 +1,371 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+:root {
+  --cream: #f7f4ee;
+  --dark: #242722;
+  --olive: #727b60;
+  --sand: #ded6c8;
+}
+
+.app {
+  min-height: 100vh;
+  color: var(--dark);
+}
+
+/* NAVIGATION */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 7%;
+  background: var(--cream);
+  border-bottom: 1px solid var(--sand);
+}
+
+.logo, .footer-logo {
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.logo span {
+  color: var(--olive);
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-button {
+  border: none;
+  background: transparent;
+  color: var(--dark);
+  cursor: pointer;
+  font: inherit;
+  font-size: 14px;
+}
+
+.nav-button:hover {
+  color: var(--olive);
+}
+
+/* HERO */
+.hero {
+  padding: 95px 20px 105px;
+  text-align: center;
+  background: var(--cream);
+}
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: var(--olive);
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(42px, 6vw, 76px);
+  line-height: 1.15;
+  margin: 22px 0;
+}
+
+.hero h1 em {
+  color: var(--olive);
+  font-weight: 400;
+}
+
+.hero p {
+  color: #74766f;
+  line-height: 1.8;
+  max-width: 480px;
+  margin: 0 auto 35px;
+}
+
+.search-bar {
+  display: flex;
+  max-width: 620px;
+  margin: auto;
+  background: white;
+  border: 1px solid var(--sand);
+  padding: 5px;
+}
+
+.search-bar input {
+  flex: 1;
+  min-width: 0;
+  padding: 15px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+.search-bar button {
+  background: var(--olive);
+  border: none;
+  color: white;
+  padding: 16px 24px;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background: #5a634a;
+}
+
+/* CONTENT */
+.content {
+  max-width: 1200px;
+  margin: auto;
+  padding: 75px 30px 100px;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 35px;
+  border-bottom: 1px solid var(--sand);
+  padding-bottom: 24px;
+}
+
+.section-heading h2 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 42px;
+  font-weight: 400;
+  margin: 10px 0 0;
+}
+
+.count {
+  color: #888;
+  font-size: 13px;
+}
+
+.drink-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px 25px;
+}
+
+/* DRINK CARDS */
+.drink-card {
+  min-width: 0;
+}
+
+.image-wrapper {
+  position: relative;
+  overflow: hidden;
+  background: var(--sand);
+  aspect-ratio: 4 / 4.5;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.drink-card:hover img {
+  transform: scale(1.04);
+}
+
+.heart-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  border: none;
+  background: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--olive);
+}
+
+.card-info {
+  padding: 20px 2px;
+}
+
+.category {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--olive);
+  text-transform: uppercase;
+}
+
+.card-info h3 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 26px;
+  font-weight: 400;
+  margin: 10px 0 18px;
+}
+
+.recipe-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 0 6px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--dark);
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.recipe-link:hover {
+  color: var(--olive);
+  border-color: var(--olive);
+}
+
+.message {
+  text-align: center;
+  padding: 45px;
+  color: #777;
+}
+
+/* RECIPE MODAL */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  z-index: 10;
+}
+
+.modal {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--cream);
+  max-width: 950px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.modal-image {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  object-fit: cover;
+}
+
+.modal-content {
+  padding: 45px;
+}
+
+.modal-content h2 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 42px;
+  font-weight: 400;
+}
+
+.modal-content h3 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 23px;
+  margin-top: 30px;
+}
+
+.modal-content li {
+  margin-bottom: 10px;
+}
+
+.modal-content p {
+  line-height: 1.8;
+}
+
+/* FOOTER */
+footer {
+  background: var(--dark);
+  color: white;
+  text-align: center;
+  padding: 55px 20px;
+}
+
+footer p {
+  color: #c3c4be;
+  margin: 15px 0 30px;
+}
+
+footer span {
+  font-size: 12px;
+  color: #a5a79e;
+}
+
+/* RESPONSIVE */
+@media (max-width: 800px) {
+  .drink-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .modal {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-image {
+    height: 280px;
+    min-height: 0;
+  }
+}
+
+@media (max-width: 550px) {
+  .navbar {
+    padding: 22px 18px;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    font-size: 16px;
+  }
+
+  .nav-links {
+    gap: 15px;
+  }
+
+  .hero {
+    padding: 65px 20px;
+  }
+
+  .search-bar {
+    flex-direction: column;
+  }
+
+  .content {
+    padding: 45px 20px;
+  }
+
+  .section-heading h2 {
+    font-size: 32px;
+  }
+
+  .drink-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-content {
+    padding: 25px;
+  }
+}
